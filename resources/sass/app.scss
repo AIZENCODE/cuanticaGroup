@@ -36,7 +36,7 @@ $navbar-light-active-color: #ff9c00;
 
 
 * {
-    //   outline: 1px solid red;
+        //   outline: 1px solid red;
 
 }
 
@@ -73,6 +73,7 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.195);
 
 }
+
 .categories__list::-webkit-scrollbar-thumb {
     background-color: #ff9c00;
     border-radius: 5px;
@@ -84,7 +85,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 8000;
 }
 
-.nav-link{
+.nav-link {
     // font-family: 'Open Sans', sans-serif;
 }
 
@@ -98,7 +99,8 @@ body::-webkit-scrollbar-thumb {
     width: 50px;
     object-fit: cover;
 }
-main{
+
+main {
     margin-top: 72px;
 }
 
@@ -106,9 +108,19 @@ main{
 
     background: #F9F9F9;
     // outline: 1px solid red; 
-    
+
     min-height: 92.5vh;
     overflow-x: hidden;
+
+}
+.header__main--orange {
+
+    min-height: 65vh;
+    overflow-x: hidden;
+
+    background: rgb(255,231,145);
+    background: linear-gradient(0deg, rgba(255,231,145,1) 0%, rgba(255,255,255,1) 80%);
+ 
 
 }
 
@@ -129,12 +141,35 @@ main{
 
 
 }
-
+.header__picture{
+    z-index: 10;
+}
 .header__img {
+   
+    width: 100%;
+    // outline: 1px solid red;
+    
+   
+    object-fit: contain;
+    object-position: bottom;
+   
+}
 
-    min-height: 400px;
+.header__img--person {
+
+    min-height: unset;
     max-height: 500px;
     object-fit: contain;
+   
+}
+
+.header__img--cel {
+
+    padding: 2em 0;
+    min-height: unset;
+    max-height: 650px;
+    object-fit: contain;
+   
 }
 
 .header__paragraph {
@@ -150,8 +185,18 @@ main{
     border-radius: 50%;
     border: 15px solid #ffe79186;
     padding: 30px;
-
-
+}
+.circle__1--orange {
+  
+    top: unset;
+    bottom: 0px;
+    right: 22%;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background: #ff9d004f;
+    border: unset;
+    padding: 0;
 }
 
 .circle__2 {
@@ -175,6 +220,18 @@ main{
     border-radius: 50%;
     border: 15px solid #ff9d008e;
     padding: 100px;
+
+}
+.circle__3--orange {
+    position: absolute;
+    top: 50px;
+    right: 50%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #ff9d0096;
+    border: unset;
+    padding: 0;
 
 }
 
@@ -286,7 +343,8 @@ main{
 // servicios
 
 .services {
-    background: #F1F9F8;
+    background: rgb(241, 249, 248);
+    background: linear-gradient(180deg, rgba(241, 249, 248, 1) 42%, rgba(255, 255, 255, 1) 100%);
 }
 
 .services__container {
@@ -443,7 +501,16 @@ main{
 .service__title {
     font-weight: 900;
 }
+.services__card{
+    background: #F3F4F6;
+    transition: all ease-in .3s;
+    
+}
 
+.services__card:hover{
+ 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 // Clientes
 .clientes {
@@ -866,27 +933,31 @@ main{
     max-width: 670px;
 
 }
-.categories__list{
+
+.categories__list {
     width: 100%;
     overflow: auto;
 }
-input[type="checkbox"]{
 
-    
+.input[type="checkbox"] {
+
+
     visibility: hidden;
     display: none;
 
 
 }
-.category__check{
+
+.category__check {
     cursor: pointer;
     position: relative;
     border: 1px solid #ff9c00;
     padding: .5em 1em;
     color: #ff9c00;
-    transition:  ease-in .2s;
+    transition: ease-in .2s;
 }
-input[type="checkbox"]:checked ~ .category__check{
+
+input[type="checkbox"]:checked~.category__check {
 
     position: relative;
     background: #ff9c00;
@@ -896,11 +967,12 @@ input[type="checkbox"]:checked ~ .category__check{
 }
 
 
- .category__check:hover{
-     background: #ff9c00;
-     font-weight: 700;
-     color: #fff;
- }
+.category__check:hover {
+    background: #ff9c00;
+    font-weight: 700;
+    color: #fff;
+}
+
 .form__content {
     width: 100%;
     max-width: 400px;
@@ -947,7 +1019,7 @@ input[type="checkbox"]:checked ~ .category__check{
 
         height: 50%;
         width: 100%;
-      
+
 
     }
 
@@ -1003,7 +1075,7 @@ input[type="checkbox"]:checked ~ .category__check{
 
 }
 
-.blog__icon{
+.blog__icon {
     display: block;
     height: 15px;
     width: 15px;
@@ -1213,34 +1285,36 @@ input[type="checkbox"]:checked ~ .category__check{
 
 // Login
 
-.login__card{
+.login__card {
     max-width: 500px;
     gap: 2em;
-    
-    
+
+
 }
-.login__difuminar{
+
+.login__difuminar {
     width: 60px;
     height: 60px;
 }
 
 
-.login__logo{
+.login__logo {
     height: 70px;
     width: 70px;
 }
 
-.sesions{
+.sesions {
     display: block;
     width: 20px;
     height: 20px;
     object-fit: contain;
 }
 
-.login__red{
+.login__red {
     padding: .7em 0;
 }
-.boton{
+
+.boton {
     position: relative;
     border-radius: 7px;
     color: white;
@@ -1249,81 +1323,101 @@ input[type="checkbox"]:checked ~ .category__check{
 
 
 
-.facebook{
+.facebook {
     background: #4064AC;
 
 }
-.google{
+
+.google {
     background: #D64937;
-  
+
 }
-.twitter{
+
+.twitter {
     background: #1C9CEA;
-  
+
 }
-.boton::after{
+
+.boton::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid ;
+    border: 1px solid;
 
     border-radius: 7px;
 }
 
-.boton:hover{
+.boton:hover {
     background: none;
     color: unset;
 }
+
+
+
+
+
+
+// Portafolio
+.portafolio__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 3em;
+
+}
+
 // ----------------------------------Estilos Admin --------------------------------------
 
 
 * {
     //   outline: 1px solid red;
-   
-   }
-   
 
- .admin{
+}
+
+
+.admin {
     height: 100vh;
- }
+}
 
- .sidebar{
+.sidebar {
     background: #fff;
     max-height: 100vh;
     min-width: 300px;
     max-width: 300px;
     overflow-x: hidden;
     overflow-y: auto;
- }
+}
 
- .sidebar__item{
+.sidebar__item {
     padding: .8em 2em;
     color: #1C3146;
     transition: all .3s;
- }
- .sidebar__item--active{
+}
+
+.sidebar__item--active {
     color: #ff9c00;
     font-weight: 700;
- }
- .sidebar__item--active::after{
+}
+
+.sidebar__item--active::after {
     content: "";
     border-radius: 50%;
     margin-left: auto;
     background: #ff9c00;
     padding: .28em;
-    
- }
- .sidebar__item:hover{
-    
-  
+
+}
+
+.sidebar__item:hover {
+
+
     color: #ff9c00;
     font-weight: 700;
- }
+}
 
- .content{
+.content {
     max-height: 100vh;
     min-height: 100vh;
     width: 100%;
@@ -1333,7 +1427,7 @@ input[type="checkbox"]:checked ~ .category__check{
 
 //  Nav
 
-.nav__icon{
+.nav__icon {
     position: relative;
     font-size: 1.2em;
     padding: .4em .8em;
@@ -1344,36 +1438,37 @@ input[type="checkbox"]:checked ~ .category__check{
     transition: all .2s;
 }
 
-.nav__avatar{
+.nav__avatar {
     height: 45px;
     width: 45px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.nav__count{
-    
+.nav__count {
+
     background-color: #ff9c00;
-    
+
 
 }
 
-.nav__icon:hover{
-    
-    
+.nav__icon:hover {
+
+
     background: #ff9d00;
     color: white;
-    .nav__count{
-       
+
+    .nav__count {
+
         background-color: #fff;
         color: #ff9c00;
         border: 1px solid #eee;
-     
+
     }
 }
 
 
-.dashboard__title{
+.dashboard__title {
     font-weight: 700;
 }
 
@@ -1381,7 +1476,7 @@ input[type="checkbox"]:checked ~ .category__check{
 // ADMIN POST EDIT
 
 
-.editpost__img{
+.editpost__img {
     width: 100%;
     height: 650px;
     object-fit: cover;
@@ -1417,12 +1512,13 @@ input[type="checkbox"]:checked ~ .category__check{
         grid-row: 2/-1;
         grid-column: 7/-1;
     }
+
     .blog__img1 {
-        
+
         min-height: 235px;
-    max-height: 235px;
-         width: 100%;
-       
+        max-height: 235px;
+        width: 100%;
+
     }
 }
 
@@ -1556,7 +1652,7 @@ input[type="checkbox"]:checked ~ .category__check{
 @media (max-width: 768px) {
 
 
-    
+
 
     .blogdos__card:nth-child(2n) {
         flex-direction: column;
@@ -1586,7 +1682,7 @@ input[type="checkbox"]:checked ~ .category__check{
 
     // ---------------------------------------------------Admin---------------------------------------
 
-    .sidebar{
+    .sidebar {
 
 
         margin-left: -300px;
@@ -1596,9 +1692,10 @@ input[type="checkbox"]:checked ~ .category__check{
         transition: all .3s;
 
     }
-    .sidebar.active{
+
+    .sidebar.active {
         margin-left: 0;
-     
+
 
     }
 }

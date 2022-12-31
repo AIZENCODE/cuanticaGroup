@@ -10999,6 +10999,13 @@ main {
   overflow-x: hidden;
 }
 
+.header__main--orange {
+  min-height: 65vh;
+  overflow-x: hidden;
+  background: rgb(255, 231, 145);
+  background: linear-gradient(0deg, rgb(255, 231, 145) 0%, rgb(255, 255, 255) 80%);
+}
+
 .header__container {
   height: 100%;
 }
@@ -11013,9 +11020,29 @@ main {
   text-transform: uppercase;
 }
 
+.header__picture {
+  z-index: 10;
+}
+
 .header__img {
-  min-height: 400px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.header__img--person {
+  min-height: unset;
   max-height: 500px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header__img--cel {
+  padding: 2em 0;
+  min-height: unset;
+  max-height: 650px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -11033,6 +11060,18 @@ main {
   border-radius: 50%;
   border: 15px solid rgba(255, 231, 145, 0.5254901961);
   padding: 30px;
+}
+
+.circle__1--orange {
+  top: unset;
+  bottom: 0px;
+  right: 22%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: rgba(255, 157, 0, 0.3098039216);
+  border: unset;
+  padding: 0;
 }
 
 .circle__2 {
@@ -11055,6 +11094,18 @@ main {
   border-radius: 50%;
   border: 15px solid rgba(255, 157, 0, 0.5568627451);
   padding: 100px;
+}
+
+.circle__3--orange {
+  position: absolute;
+  top: 50px;
+  right: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 157, 0, 0.5882352941);
+  border: unset;
+  padding: 0;
 }
 
 .main {
@@ -11147,7 +11198,8 @@ main {
 }
 
 .services {
-  background: #F1F9F8;
+  background: rgb(241, 249, 248);
+  background: linear-gradient(180deg, rgb(241, 249, 248) 42%, rgb(255, 255, 255) 100%);
 }
 
 .services__container {
@@ -11277,6 +11329,15 @@ main {
 
 .service__title {
   font-weight: 900;
+}
+
+.services__card {
+  background: #F3F4F6;
+  transition: all ease-in 0.3s;
+}
+
+.services__card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .clientes {
@@ -11636,7 +11697,7 @@ main {
   overflow: auto;
 }
 
-input[type=checkbox] {
+.input[type=checkbox] {
   visibility: hidden;
   display: none;
 }
@@ -11967,6 +12028,12 @@ input[type=checkbox]:checked ~ .category__check {
 .boton:hover {
   background: none;
   color: unset;
+}
+
+.portafolio__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 3em;
 }
 
 .admin {

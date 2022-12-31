@@ -23,6 +23,8 @@ Route::get('nosotros',[DataController::class,'index'])->name('nosotros.index');
 
 // Servicios
 Route::get('servicios',[ServiceController::class,'index'])->name('services.index');
+Route::get('servicios/{service}',  [ServiceController::class,'show'])->name('services.show');
+
 
 // Portafolio
 Route::get('portafolio',[PortafolioController::class,'index'])->name('portafolios.index');

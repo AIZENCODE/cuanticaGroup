@@ -23,7 +23,7 @@ class HomeController extends Controller
         ->limit(6)
         ->get(); 
 
-
+ 
         //  return $portafolios;
         return view('client.index', compact('services','portafolios'));
     }

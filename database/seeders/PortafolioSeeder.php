@@ -16,6 +16,6 @@ class PortafolioSeeder extends Seeder
      */
     public function run()
     {
-        Portafolio::factory(10)->create();
+        Portafolio::factory(20)->create();
     }
 }

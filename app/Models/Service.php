@@ -38,4 +38,11 @@ class Service extends Model
         );
     }
 
+      // Route Model Binding
+
+      public function getRouteKeyName(){
+        return 'slug';
+    }
+
+
 }

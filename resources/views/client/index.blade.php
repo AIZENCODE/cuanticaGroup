@@ -1,4 +1,7 @@
 <x-app-layout>
+
+
+    
     <header>
         <div class="header__main position-relative d-grid align-content-center ">
             <div class="header__container container  ">
@@ -275,28 +278,28 @@
                 <h2 class="title text-secondary">Conoce Nuestro <span class="text-primary">Portafolio</span></h2>
 
                 <div
-                    class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-around gap-3 mb-2 mb-lg-5 portafolio__cards m-0">
+                class=" portafolio__cards">
 
 
-                    @foreach ($portafolios as $portafolio)
-                        <div class="card portafolio__card border-0 shadow-lg px-0 align-content-between">
-                            <div class="card__picture">
-                                <img src="{{ $portafolio->image }}" class="portafolio__img "
-                                    alt="{{ $portafolio->name }}">
-                            </div>
-
-
-                            <div class="d-flex justify-content-center align-items-center h-100 px-3 py-2">
-                                <h2 class="align-self-center portafolio__proyecto align-self-center  text-center">
-                                    {{ $portafolio->name }}</h2>
-                            </div>
-
-
+                @foreach ($portafolios as $portafolio)
+                    <div class="card   border-0 shadow-lg px-0 align-content-between">
+                        <div class="card__picture">
+                            <img src="{{ $portafolio->image }}" class="portafolio__img "
+                                alt="{{ $portafolio->name }}">
                         </div>
-                    @endforeach
 
 
-                </div>
+                        <div class="d-flex justify-content-center align-items-center h-100 px-3 py-2">
+                            <h2 class="align-self-center portafolio__proyecto align-self-center  text-center">
+                                {{ $portafolio->name }}</h2>
+                        </div>
+
+
+                    </div>
+                @endforeach
+
+
+            </div>
                 <span>
                     <a href="{{ route('portafolios.index') }}" class="btn btn-outline-primary"> Ver Todos</a>
                 </span>

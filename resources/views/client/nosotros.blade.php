@@ -1,5 +1,48 @@
 <x-app-layout>
 
+
+
+    <header>
+        <div class="header__main  header__main--orange position-relative d-grid align-content-end ">
+            <div class="header__container container  ">
+                <div class="row  gap-5 gap-sm-5 gap-xl-0 justify-content-between align-items-end header__contenido pt-5 py-xl-0">
+                    <div class="col-12 col-xl-5 header__texts align-self-center  ">
+                        <h1 class="header__title text-secondary display-1">
+                            Sobre <span class="text-primary d-block">Nosotros</span>
+                        </h1>
+                        <p class="header__paragraph">
+                            Ayudamos a las personas y organizaciones a mejorar sus
+                            capacidades y competencias digitales.
+
+                        </p>
+
+                        <a href="#" class="btn btn-primary text-white">Conocenos</a>
+                    </div>
+
+
+                    <div
+                        class="col-12 col-xl-7 header__picture justify-content-center align-self-start ">
+
+
+                        <img src="{{ asset('img/nosotros/nosotros.png') }}" alt=""
+                            class="header__img header__img--person   img-fluid">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="circle__1 circle__1--orange"></div>
+            <div class="circle__2"></div>
+            <div class="circle__3 circle__3--orange"></div>
+
+        </div>
+
+    </header>
+
+
+
     <!-- Nosotros -->
 
     <section class="nosotros  position-relative  py-2 py-lg-5">
@@ -146,9 +189,9 @@
                         style="min-width:18rem;max-width: 20rem;">
                         <img src="img/avatar/img4.jpg" class="equipo__avatar shadow-sm" alt="">
                         <div class="card-body text-center pt-5 mt-3">
-                            <h5 class="card-title">{{$group->name }}</h5>
-                            <h6 class="card-subtitle mb-3 text-muted">{{$group->cargo }}</h6>
-                            <p class="card-text">{{$group->frase }}</p>
+                            <h5 class="card-title">{{ $group->name }}</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">{{ $group->cargo }}</h6>
+                            <p class="card-text">{{ $group->frase }}</p>
                         </div>
                     </div>
                 @endforeach

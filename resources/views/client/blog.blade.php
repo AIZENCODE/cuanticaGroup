@@ -30,7 +30,7 @@
 
                         @foreach ($categories as $category)
                             <label class="d-block" for="{{ $category->name }}">
-                                <input type="checkbox" name="category[]" id="{{ $category->name }}"
+                                <input class="input" type="checkbox" name="category[]" id="{{ $category->name }}"
                                     value="{{ $category->id }}" @checked(is_array(request('category')) && in_array($category->id, request('category')))>
                                 <span class="category__check ">{{ $category->name }}</span>
                             </label>
@@ -175,6 +175,7 @@
 
 
                 </div>
+                
                 <div class="mt-5">
                     {{ $postsall->appends(['search' => request('search'), 'category' => request('category'), 'tags' => request('tags')])->links() }}
                 </div>

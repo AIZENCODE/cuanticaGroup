@@ -15,7 +15,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
+    @livewireStyles
 </head>
 
 <body class="">
@@ -95,6 +95,8 @@
 
     <!-- LightWidget WIDGET -->
     <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+
+    @livewireScripts
 </body>
 
 </html>

@@ -24,7 +24,7 @@
 
     @stack('css')
 
-
+    @livewireStyles
 </head>
 
 <body class="overflow-hidden">
@@ -327,7 +327,7 @@
 
 
     @stack('js')
-
+    @livewireScripts
 </body>
 
 </html>

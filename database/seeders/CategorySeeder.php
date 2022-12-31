@@ -17,8 +17,8 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(20)->has(
-            Post::factory(20)
+        Category::factory(15)->has(
+            Post::factory(5)
             ->state(new Sequence(
            [
                    'is_published' => true,
@@ -31,7 +31,7 @@ class CategorySeeder extends Seeder
 
            ],
             ))
-            ->hasTags(2)
+            ->hasTags(10)
                 )->create();
    
     }

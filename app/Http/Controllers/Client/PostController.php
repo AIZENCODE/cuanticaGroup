@@ -52,7 +52,7 @@ class PostController extends Controller
                 $query->where('title','LIKE','%'.request('search').'%' );
                     // ->Orwhere('summary','LIKE','%'.request('search').'%' );
             })
-            ->paginate(12);
+            ->paginate(18);
 
 
 
