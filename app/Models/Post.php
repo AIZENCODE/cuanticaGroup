@@ -57,6 +57,15 @@ class Post extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    
+    // Relacion uno a muchos polimorfica
+
+    public function questions()
+    {
+        return $this->morphMany(Question::class,'questionable');
+    }
+
+
     // Route Model Binding
 
     public function getRouteKeyName(){

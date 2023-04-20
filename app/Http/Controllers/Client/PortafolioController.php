@@ -17,4 +17,9 @@ class PortafolioController extends Controller
 
         return view('client.portafolio');
     }
+
+    public function show(Portafolio $portafolio)
+    {
+        return view('client.services.show', compact('portafolio'));
+    }
 }

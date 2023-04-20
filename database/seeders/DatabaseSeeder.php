@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,13 +18,18 @@ class DatabaseSeeder extends Seeder
     {
 
 
-       $this->call(UserSeeder::class);
-       $this->call(CategorySeeder::class);
-       $this->call(ServiceSeeder::class);
-       $this->call(GroupSeeder::class);
-       $this->call(PortafolioSeeder::class);
-       
-      
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(ServiceSeeder::class);
+        $this->call(GroupSeeder::class);
+        $this->call(PortafolioSeeder::class);
+        $this->call(ScoreSeeder::class);
+        $this->call(ApproachSeeder::class);
+        $this->call(EnterpriseSeeder::class);
+        $this->call(ClientSeeder::class);
+
+
 
 
         // Category::factory(5)->has(
@@ -30,7 +37,7 @@ class DatabaseSeeder extends Seeder
         //         Tag::factory(2)
         //         )
         //         )->create();
-        
+
         // Post::factory(50)->create();
 
         // Tag::factory(20)->create();

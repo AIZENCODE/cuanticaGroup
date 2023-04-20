@@ -8,18 +8,15 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
+ 
     public function index()
     {
 
-        $services = Service::where('status', true)
-        ->orderBy('id', 'desc')
-        ->paginate(18); 
 
-        // return $services;
-        
-
-        return view('client.servicios',compact('services'));
+        return view('client.servicios');
     }
+
+
 
     public function show(Service $post)
     {

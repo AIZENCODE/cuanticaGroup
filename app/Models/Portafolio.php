@@ -18,8 +18,6 @@ class Portafolio extends Model
         'content',
         'description',
         'image_url',
-        'ico_url',
-        'outstanding',
         'status',
     ];
     public function image(): Attribute
@@ -30,4 +28,9 @@ class Portafolio extends Model
             }
         );
     }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
 }

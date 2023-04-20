@@ -1,7 +1,7 @@
 <div>
     <!-- services -->
 
-    <section class="servic position-relative justify-content-center align-content-center py-2 py-lg-5">
+    <section class="servic position-relative justify-content-center align-content-center py-3 py-lg-5">
 
 
         <div class="servic_container container ">
@@ -14,7 +14,7 @@
             </div>
 
             @if ($portafolios->count())
-            <div class=" portafolio__cards">
+            <div class=" portafolio__cards my-5">
 
 
                 @foreach ($portafolios as $portafolio)
@@ -25,8 +25,8 @@
 
 
                         <div class="d-flex justify-content-center align-items-center h-100 px-3 py-2">
-                            <h2 class="align-self-center portafolio__proyecto align-self-center  text-center">
-                                {{ $portafolio->name }}</h2>
+                            <a href="{{ route('portafolios.show',$portafolio) }}" class="align-self-center portafolio__proyecto align-self-center  text-center h2 text-decoration-none">
+                                {{ $portafolio->name }}</a>
                         </div>
 
 

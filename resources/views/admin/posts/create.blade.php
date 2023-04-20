@@ -63,9 +63,11 @@
         </div>
 
 
-        <span class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-outline-primary px-4 py-2">Crear Post</button>
-        </span>
+        @can('admin.posts.create')
+            <span class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-primary px-4 py-2">Crear Post</button>
+            </span>
+        @endcan
 
 
 

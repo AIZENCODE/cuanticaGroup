@@ -5,14 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('img/logo/cuantica.ico') }}">
 
 
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <!--  -->
+   
 
     <script src="https://kit.fontawesome.com/925f4b0807.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
+
+    @stack('css')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @livewireStyles
@@ -71,30 +72,10 @@
 
 
 
-    <!-- swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 50,
-                depth: 200,
-                modifier: 1,
-                slideShadows: false,
-            },
-            loop: true,
+    @stack('js')
 
-        });
-    </script>
-
-
-    <!-- LightWidget WIDGET -->
-    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        
 
     @livewireScripts
 </body>

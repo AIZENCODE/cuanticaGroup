@@ -19,20 +19,20 @@ class CategorySeeder extends Seeder
     {
         Category::factory(15)->has(
             Post::factory(5)
-            ->state(new Sequence(
-           [
-                   'is_published' => true,
-                   'published_at' => now(),
+                ->state(new Sequence(
+                    [
+                        'outstanding' => true,
+                        'is_published' => true,
+                        'published_at' => now(),
 
-           ],
-           [
-                   'is_published' => false,
-                   'published_at' => null,
+                    ],
+                    [
+                        'is_published' => false,
+                        'published_at' => null,
 
-           ],
-            ))
-            ->hasTags(10)
-                )->create();
-   
+                    ],
+                ))
+                ->hasTags(10)
+        )->create();
     }
 }

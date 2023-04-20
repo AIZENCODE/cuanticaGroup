@@ -9,12 +9,16 @@ use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\DataController;
 use App\Http\Controllers\Client\PortafolioController;
 use App\Http\Controllers\Client\ServiceController;
+use App\Models\Enterprise;
 use Illuminate\Support\Facades\Route;
 
 
 
 // Home
+
 Route::get('/',[HomeController::class,'index'])->name('home.index');
+
+
 
 
 // Nosotros
@@ -28,6 +32,7 @@ Route::get('servicios/{service}',  [ServiceController::class,'show'])->name('ser
 
 // Portafolio
 Route::get('portafolio',[PortafolioController::class,'index'])->name('portafolios.index');
+Route::get('portafolio/{portafolio}',  [PortafolioController::class,'show'])->name('portafolios.show');
 
 // Blogs
 

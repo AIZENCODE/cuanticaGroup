@@ -13,11 +13,8 @@
 
                     
 
-                    <p class="cuantica__paragraph">Ayudamos a las personas y
-                        organizaciones a mejorar sus
-                        capacidades y competencias
-                        digitales. Lorem Ipsum has been
-                        the industry's standard dummy</p>
+                          
+                    <p class="cuantica__paragraph">  {{$enterprise->description}}</p>
                 </div>
             </div>
 
@@ -32,13 +29,16 @@
             </div>
 
             <div class="col-12 col-lg-6 col-xl-2 footer__links d-flex flex-column gap-2">
-                <h3 class="footer__title"> Politicas</h3>
+                <h3 class="footer__title"> Links Rápidos</h3>
                 <div class="footer__items d-flex flex-column gap-2">
-                    <a href="#" class="text-decoration-none text-white">Sobre Nosotros</a>
-                    <a href="#" class="text-decoration-none text-white">Servicios</a>
-                    <a href="#" class="text-decoration-none text-white">Portafolio</a>
-                    <a href="#" class="text-decoration-none text-white">blog</a>
-                    <a href="#" class="text-decoration-none text-white">Contacto</a>
+                    @foreach ($links as $link)
+                    
+
+                    <a href="{{ $link['url'] }}" class="text-decoration-none text-white">{{ $link['title'] }}</a>
+
+                    
+                    @endforeach
+            
                 </div>
 
             </div>
@@ -50,16 +50,13 @@
 
 
                     <p class="text-white m-0 d-flex  gap-2 align-items-center"><img class="contact__icon"
-                            src="img/footer/edificio.png" alt="">Sede Lima: Irribarren 1148 4to Piso Oficina N°
-                        4 - Surquillo
-                        Sede Chincha: Urb. Los Bancarios Mz B Lt. 13</p>
+                            src="{{ asset('img/footer/edificio.png') }}" alt="">{{$enterprise->direccion}}</p>
 
                     <p class="text-white m-0 d-flex gap-2 align-items-center"><img class="contact__icon"
-                            src="img/footer/llamar.png" alt="">968370868 - 968370868</p>
+                            src="{{ asset('img/footer/llamar.png') }}" alt="">{{$enterprise->telefono_uno ." - " .  $enterprise->telefono_dos}}</p>
 
                     <p class="text-white d-flex gap-2  m-0 align-items-center"><img class="contact__icon"
-                            src="img/footer/correo (1).png" alt="">marcos@cuanticagroup.com
-                        alder@cuanticagroup.com
+                            src="{{ asset('img/footer/correo (1).png') }}" alt="">{{$enterprise->correo}}
                     </p>
 
 
@@ -68,29 +65,29 @@
 
 
                     <div class="footer__link">
-                        <a href="https://www.facebook.com/CuanticaGroup" class="d-flex align-items-center">
-                            <img class="footer__social" src="img/socials/simbolo-de-la-aplicacion-de-facebook.png"
+                        <a href="{{$enterprise->facebook}}" class="d-flex align-items-center" target="_blank">
+                            <img class="footer__social" src="{{ asset('img/socials/simbolo-de-la-aplicacion-de-facebook.png') }}"
                                 alt="">
                         </a>
                     </div>
                     <div class="footer__link">
-                        <a href="https://www.facebook.com/CuanticaGroup" class="d-flex align-items-center">
-                            <img class="footer__social" src="img/socials/instagram (3).png" alt="">
+                        <a href="{{$enterprise->instagram}}" class="d-flex align-items-center" target="_blank">
+                            <img class="footer__social" src="{{ asset('img/socials/instagram (3).png') }}" alt="">
                         </a>
                     </div>
                     <div class="footer__link">
-                        <a href="https://www.facebook.com/CuanticaGroup" class="d-flex align-items-center">
-                            <img class="footer__social" src="img/socials/twitter.png" alt="">
+                        <a href="{{$enterprise->twitter}}" class="d-flex align-items-center" target="_blank">
+                            <img class="footer__social" src="{{ asset('img/socials/twitter.png') }}" alt="">
                         </a>
                     </div>
                     <div class="footer__link">
-                        <a href="https://www.facebook.com/CuanticaGroup" class="d-flex align-items-center">
-                            <img class="footer__social" src="img/socials/linkedin.png" alt="">
+                        <a href="{{$enterprise->linkedin}}" class="d-flex align-items-center" target="_blank">
+                            <img class="footer__social" src="{{ asset('img/socials/linkedin.png') }}" alt="">
                         </a>
                     </div>
                     <div class="footer__link">
-                        <a href="https://www.facebook.com/CuanticaGroup" class="d-flex align-items-center">
-                            <img class="footer__social" src="img/socials/youtube.png" alt="">
+                        <a href="{{$enterprise->youtube}}" class="d-flex align-items-center" target="_blank">
+                            <img class="footer__social" src="{{ asset('img/socials/youtube.png') }}" alt="">
                         </a>
                     </div>
 

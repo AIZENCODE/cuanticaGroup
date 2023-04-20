@@ -34,12 +34,22 @@ $navbar-light-active-color: #ff9c00;
 
 }
 
+// General
 
+.btn__out:hover{
+    color: #fff;
+}
+
+
+// Fin general
 * {
-        //   outline: 1px solid red;
+    //   outline: 1px solid red;
 
 }
 
+button{
+    all: unset;
+}
 // ----------------------------------Estilos generales --------------------------------------
 
 /* Scroll */
@@ -113,14 +123,15 @@ main {
     overflow-x: hidden;
 
 }
+
 .header__main--orange {
 
     min-height: 65vh;
     overflow-x: hidden;
 
-    background: rgb(255,231,145);
-    background: linear-gradient(0deg, rgba(255,231,145,1) 0%, rgba(255,255,255,1) 80%);
- 
+    background: rgb(255, 231, 145);
+    background: linear-gradient(0deg, rgba(255, 231, 145, 1) 0%, rgba(255, 255, 255, 1) 80%);
+
 
 }
 
@@ -141,18 +152,35 @@ main {
 
 
 }
-.header__picture{
+
+.header__picture {
     z-index: 10;
 }
+
 .header__img {
-   
+
     width: 100%;
+
     // outline: 1px solid red;
-    
-   
+
+
     object-fit: contain;
     object-position: bottom;
-   
+
+}
+
+.header__img--carru {
+
+    width: 100%;
+    height: 450px;
+
+    transition: all 0.3s;
+    // outline: 1px solid red;
+
+
+    object-fit: contain;
+    object-position: center;
+
 }
 
 .header__img--person {
@@ -160,7 +188,7 @@ main {
     min-height: unset;
     max-height: 500px;
     object-fit: contain;
-   
+
 }
 
 .header__img--cel {
@@ -169,7 +197,7 @@ main {
     min-height: unset;
     max-height: 650px;
     object-fit: contain;
-   
+
 }
 
 .header__paragraph {
@@ -186,8 +214,9 @@ main {
     border: 15px solid #ffe79186;
     padding: 30px;
 }
+
 .circle__1--orange {
-  
+
     top: unset;
     bottom: 0px;
     right: 22%;
@@ -222,6 +251,7 @@ main {
     padding: 100px;
 
 }
+
 .circle__3--orange {
     position: absolute;
     top: 50px;
@@ -258,7 +288,7 @@ main {
 
 .pasatiempo__item {
     position: relative;
-    max-width: 320px;
+    max-width: 360px;
     color: var(--i);
     border-radius: 20px;
     overflow: hidden;
@@ -339,6 +369,16 @@ main {
 
 }
 
+.color__recomendados {
+    margin: 0;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: var(--i);
+    border-radius: 50%;
+    overflow: hidden;
+
+}
 
 // servicios
 
@@ -388,23 +428,7 @@ main {
 
 }
 
-.service__item {
-    cursor: pointer;
-    color: #fff;
-    transition: all .3s ease;
-}
 
-.service__item:hover {
-    background: #fff;
-    color: #1C3146;
-}
-
-.service__item--active {
-
-    background: #fff;
-    color: #1C3146;
-
-}
 
 .services__contentone {
 
@@ -477,8 +501,8 @@ main {
 
 .services__pictureico {
 
-    background: #1C3146;
-    border: 2px solid #ff9c00;
+    background: #ffffff;
+    border: 2px solid #78C4C3;
     border-radius: 50%;
     padding: .8em;
     height: 60px;
@@ -488,7 +512,7 @@ main {
 .service__icon {
     width: 100%;
     height: 100%;
-
+    object-fit: contain;
 
 }
 
@@ -497,18 +521,37 @@ main {
 
 }
 
+.service__item {
+    cursor: pointer;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+.service__item:hover {
+    background: #fff;
+    color: #1C3146;
+}
+
+.service__item--active {
+
+    background: #fff;
+    color: #1C3146;
+
+
+}
 
 .service__title {
     font-weight: 900;
 }
-.services__card{
+
+.services__card {
     background: #F3F4F6;
     transition: all ease-in .3s;
-    
+
 }
 
-.services__card:hover{
- 
+.services__card:hover {
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -518,16 +561,11 @@ main {
     background: linear-gradient(181.55deg, #FFFFFF 59.9%, #FFE791 123.04%);
 }
 
-.clientes__logo {
-    object-fit: cover;
-    max-height: 80px;
-    max-width: 80px;
 
-}
 
 .flecha {
 
-
+    rotate: 90deg;
     width: 60px;
     height: 60px;
     object-fit: contain;
@@ -535,17 +573,82 @@ main {
 }
 
 .clientes__picture {
-    filter: grayscale(80%);
-    transition: filter .8s ease;
-    cursor: pointer;
+    position: relative;
+   
+    max-width: 250px;
+    height: 140px;
+    margin: 0;
+    padding: 1.7em;
+     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .07);
+
 }
 
-.clientes__picture:hover {
-    filter: grayscale(0%);
+.clientes__picture--active {
+    margin: 0;
+    max-width: 250px;
+    border-radius: 15px;
+
+    padding: 1.7em;
+    height: 140px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
 }
+
+
+.clientes__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    filter: grayscale(1);
+    transition: 0.5s;
+    transform: scale(0.8);
+}
+
+.clientes__picture--active .clientes__logo {
+    filter: grayscale(0);
+
+    transform: scale(1);
+}
+
+.clientes__content {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    //  outline: 1px solid blue;
+}
+
+.cliente__text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s;
+    transform: scale(0);
+    opacity: 0;
+
+}
+
+.cliente__text--active {
+
+    transform: scale(1);
+    opacity: 1;
+    transition: .8s;
+}
+
+
+
+
 
 .clientes__subtitle {
-    height: 500px;
+    height: 350px;
 
     margin: 0 auto;
     text-align: center;
@@ -576,6 +679,12 @@ main {
 
 }
 
+
+
+
+
+
+
 // Portafolio
 
 .portafolio__card {
@@ -593,6 +702,13 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
+    transition: ease-in 3s;
+}
+
+.portafolio__img:hover {
+
+    object-position: bottom;
 }
 
 .portafolio__proyecto {
@@ -601,7 +717,13 @@ main {
     font-weight: 700;
 }
 
-
+.fondo__port{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
 // Clientes
 .comentario {
     position: relative;
@@ -659,17 +781,14 @@ main {
     display: block;
 }
 
-.comentario__title {
-    font-size: 20px;
-    font-weight: 500;
-}
 
-.comentario__paragraph {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
-    color: #768070;
-}
+
+// .comentario__paragraph {
+//     font-weight: 500;
+//     font-size: 16px;
+//     line-height: 26px;
+//     color: #768070;
+// }
 
 
 
@@ -680,7 +799,7 @@ main {
 .swiper {
     width: 100%;
     padding-top: 50px !important;
-    padding-bottom: 200px !important;
+    padding-bottom: 50px !important;
 }
 
 .swiper-slide {
@@ -855,8 +974,8 @@ main {
 
 .punto {
 
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 
 }
@@ -870,7 +989,7 @@ main {
 
 .nosotros__subtitle {
 
-    padding-top: 9px;
+    padding-top: 4px;
     font-weight: 700;
     color: #ff9c00;
 
@@ -891,22 +1010,44 @@ main {
     height: 50px;
     z-index: 1;
 
+
+}
+.blob{
+    position: absolute;
+    top: -45px;
+    left: -500px;
+    width: 1050px;
+    z-index: -1;
+
+}
+
+.blob--amarillo{
+
+    position: absolute;
+    bottom: -450px;
+    right: -400px;
+    width: 1050px;
+
+}
+.fondo__nosotros{
+    position: absolute;
+    z-index: -1;
 }
 
 // EQUIPO
 
 .equipo {
 
-    background: rgb(120, 196, 195);
-    background: linear-gradient(180deg, rgba(120, 196, 195, 1) 0%, rgba(255, 255, 255, 1) 65%);
+    //  background: #768070;
+    // background: linear-gradient(180deg, rgba(120, 196, 195, 1) 0%, rgba(255, 255, 255, 1) 65%);
 
 }
 
 
 .equipo__avatar {
 
-    position: absolute;
-    border-radius: 20px;
+    // position: absolute;
+    // border-radius: 20px;
     top: -100px;
     right: 0;
     left: 0;
@@ -916,6 +1057,49 @@ main {
     object-fit: cover;
 
 }
+.card__equipo{
+    
+    // background: url('./img/');
+    background: rgba(255, 255, 255, 0.285);
+    overflow: hidden;
+    // z-index: -2;
+    transform: scale(0.95);
+    transition: 1s;
+}
+
+.card__equipo:hover{
+    // background: #ff9d0099;
+    color: #ff9c00;
+    transform: scale(1);
+    transition: .7s;
+}
+.card__equipo{
+    overflow: hidden;
+    // z-index: -2;
+
+}
+
+.fondo__card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ff9d00;
+    height: 8px;
+//    z-index: -1;
+
+}
+
+.social__link{
+    text-decoration: none;
+    color: rgb(194, 194, 194);
+    transition: .8s;
+}
+
+.social__link:hover{
+    color: #ff9c00;
+}
+
 
 // BLOG
 .blog {
@@ -947,6 +1131,27 @@ main {
 
 
 }
+
+.input[type="radio"] {
+
+
+    visibility: hidden;
+    display: none;
+
+
+}
+
+input[type="radio"]:checked~.form-check-label {
+
+
+    color: #ff9c00;
+
+}
+
+.start--active {
+    color: #ff9c00;
+}
+
 
 .category__check {
     cursor: pointer;
@@ -1088,7 +1293,7 @@ input[type="checkbox"]:checked~.category__check {
 
 .blog__cardtitle {
     font-weight: 700;
-    font-size: 24px;
+    // font-size: 24px;
 }
 
 // Importante como poner un texto largo
@@ -1126,6 +1331,13 @@ input[type="checkbox"]:checked~.category__check {
 
 }
 
+.blog__category {
+
+    background: #1C314632;
+    border-radius: 30px;
+    padding: 5px 10px;
+
+}
 .blog__cardtag {
 
     background: #ff9d0032;
@@ -1147,6 +1359,29 @@ input[type="checkbox"]:checked~.category__check {
 
 }
 
+.user__post{
+    display: block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #ff9c00;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.comment__paragraph{
+    font-size: 14px;
+}
+
+.time__comment{
+    font-size: 13px;
+
+}
+
+.coment__puntos{
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
 // Paginacion
 
 .pag__flecha {
@@ -1194,7 +1429,7 @@ input[type="checkbox"]:checked~.category__check {
 
 .blogdos__picture {
 
-    min-width: 200px;
+    width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 35px solid #ff9d0075;
@@ -1480,7 +1715,6 @@ input[type="checkbox"]:checked~.category__check {
     width: 100%;
     height: 650px;
     object-fit: cover;
-
     border-radius: 10px;
 }
 
@@ -1617,6 +1851,17 @@ input[type="checkbox"]:checked~.category__check {
         color: #fff;
     }
 
+
+    // Clientes
+
+    .clientes__content {
+        
+        height: 250px;
+      
+        //  outline: 1px solid blue;
+    }
+    // Fin clientes
+
     // blog
     .blog__cardsreset {
         grid-template-columns: repeat(12, 1fr);
@@ -1662,12 +1907,7 @@ input[type="checkbox"]:checked~.category__check {
         flex-direction: column;
     }
 
-    .blogdos__picture {
-        min-width: 200px;
-        max-width: 200px;
-        min-height: 200px;
-        max-height: 200px;
-    }
+   
 
     // Contact
     .contact__info {

@@ -27,7 +27,7 @@
 
 
                 <div class="">
-                    <input name="name" type="text" class="form-control p-3 px-4" placeholder="Nombre">
+                    <input name="name" type="text" class="form-control p-3 px-4" placeholder="Nombre" value="{{ old('name') }}">
 
                     @error('name')
                     <span class="text-danger pt-2">{{$message}}</span>
@@ -36,7 +36,7 @@
                 
                 <div class="">
                     <input name="email" type="email" class="form-control p-3 px-4" id="exampleFormControlInput1"
-                    placeholder="Email">
+                    placeholder="Email" value="{{ old('email') }}">
 
                     @error('email')
                     <span class="text-danger pt-2">{{$message}}</span>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactMailable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -22,10 +24,16 @@ class ContactController extends Controller
             'nombre' => 'required',
             'correo' => 'required|email',
             'telefono' => 'required',
-            'message' => 'required',
+            'mensaje' => 'required',
 
         ]);
 
-        return view('client.contacto');
+        // Forma de acerlo con jetstream
+        // session()->flash('flash.banner','El correo se envio satisfactoriamente');
+        // session()->flash('flash.bannerStyle','success');
+
+        Mail::to('migelo5511@gmail.com')->send(new ContactMailable($request->all()));
+        return back()->with('info','El correo se envio satisfactoriamente');
+       
     }
 }

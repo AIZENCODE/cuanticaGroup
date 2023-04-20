@@ -23,7 +23,7 @@ class LoginController extends Controller
         $credentials = $request->all('email','password');
         //  return $credentials;
          if (!Auth::validate($credentials)) {
-             return redirect()->to('sesion')->with('info','Credenciales incorrectas, Intente denuevo');
+             return redirect()->to('sesion')->with('info','Correo y/o contraseña');
          }
 
          $user = Auth::getProvider()->retrieveByCredentials($credentials);

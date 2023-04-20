@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdatePostRequest;
+use App\Jobs\ResizeImage;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -87,6 +89,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        if (!Gate::allows('author',$post)) {
+            abort(403);
+        }
+
         $categories = Category::all();
 
         return view('admin.posts.edit', compact('post', 'categories'));
@@ -138,13 +144,15 @@ class PostController extends Controller
             $nameFile = Str::slug($request->title) . '.' . $request->image->extension();
             $image_url = $request->image->storeAs('posts', $nameFile);
 
+
+          
             // $nameFile = Str::slug($request->title) . '.' . $request->image->extension();
 
             // $image_url = Storage::putFileAs('posts', $request->image, $nameFile);
 
             $post->image_url = $image_url;
             $post->save();
-
+            ResizeImage::dispatch($image_url);
             // $image_url = Storage::put('posts', $request->file('image'));
 
             // $post->image_url = $image_url;

@@ -10,12 +10,12 @@
         @csrf
         @method('PUT')
 
-       
-         <div class="mb-5 position-relative">
 
-        
-                <img src=" {{ $post->image }}"  id="imgPreview" class="editpost__img " alt="{{ $post->title }}">
-            
+        <div class="mb-5 position-relative">
+
+
+            <img src=" {{ $post->image }}" id="imgPreview" class="editpost__img " alt="{{ $post->title }}">
+
             <div class="position-absolute  mt-5 me-5 top-0 end-0">
 
                 <label class=" form__img d-flex gap-2 items-center bg-white rounded-3 px-4 py-2" for="image">
@@ -28,7 +28,7 @@
 
             </div>
 
-        </div> 
+        </div>
 
         <div class="contact__card d-flex flex-column gap-4 rounded-3 shadow-lg bg-white w-100 mb-5">
             @if ($errors->any())
@@ -107,10 +107,26 @@
                 <div class="form-check form-switch">
                     <input class="form-check-input" name="is_published" value="1" @checked(old('is_published', $post->is_published) == 1)
                         type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">¿Quieres Publicar el post?</label>
+                    <label class="form-check-label" for="is_published">¿Quieres Publicar el post?</label>
                 </div>
 
             </div>
+
+
+
+            @role('Admin')
+                <div class="">
+
+                    <input type="hidden" value="0" name="outstanding">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" name="outstanding" value="1" @checked(old('outstanding', $post->outstanding) == 1)
+                            type="checkbox" role="switch" id="outstanding">
+                        <label class="form-check-label" for="outstanding">¿Quieres Poner como destacado este post?</label>
+                    </div>
+
+                </div>
+            @endrole
+
 
 
 
@@ -119,8 +135,17 @@
 
 
             <span class="d-flex flex-wrap gap-2 justify-content-end">
-                <button type="button" class="btn btn-outline-danger px-4 py-2" onclick="deletePost()">Eliminar</button>
-                <button type="submit" class="btn btn-outline-primary px-4 py-2">Actualizar Post</button>
+                @can('admin.posts.destroy')
+                    <button type="button" class="btn btn-outline-danger px-4 py-2"
+                        onclick="deletePost()">Eliminar</button>
+                @endcan
+
+                @can('admin.posts.edit')
+                    <button type="submit" class="btn btn-outline-primary px-4 py-2">Actualizar Post</button>
+                @endcan
+
+
+
             </span>
 
         </div>
@@ -130,11 +155,14 @@
 
     </form>
 
-    <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" id="formDeletePost">
-        @csrf
-        @method('DELETE')
+    @can('admin.posts.destroy')
+        <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" id="formDeletePost">
+            @csrf
+            @method('DELETE')
 
-    </form>
+        </form>
+    @endcan
+
 
 
     @push('js')

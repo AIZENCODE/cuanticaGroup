@@ -3,20 +3,25 @@
     <div class=" d-flex justify-content-between pb-2">
         <div class="">
             <h2 class="dashboard__title">Blog</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus officia repellendus totam eos
-                nulla quos ullam, necessitatibus maxime suscipit eius expedita iusto eaque neque, dignissimos perferendis.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus officia repellendus totam
+                eos
+                nulla quos ullam, necessitatibus maxime suscipit eius expedita iusto eaque neque, dignissimos
+                perferendis.
                 Aliquam, omnis totam!</p>
         </div>
-       
-          
+
+
     </div>
 
- 
-    <div class="blogdos__container  py-2 py-lg-5 d-grid gap-4">
-        <div class="d-flex justify-content-end">
-            <a href="{{ route('admin.posts.create') }}" class="btn btn-success">Nuevo</a>
-        </div>
-        
+
+    <div class="blogdos__container container py-2 py-lg-5 d-grid gap-4">
+        @can('admin.posts.create')
+            <div class="d-flex justify-content-end">
+                <a href="{{ route('admin.posts.create') }}" class="btn btn-success">Nuevo</a>
+            </div>
+        @endcan
+
+
         <div class="blogdos__cards d-grid gap-5">
 
 
@@ -25,10 +30,12 @@
             @else
                 @foreach ($posts as $post)
                     <div class="blogdos__card py-5 border-bottom">
-
-                        <div class="blogdos__picture ">
-                            <img src="{{ $post->image }}" class="blogdos__img" alt="">
+                        <div class="">
+                            <div class="blogdos__picture ">
+                                <img src="{{ $post->image }}" class="blogdos__img" alt="">
+                            </div>
                         </div>
+
 
                         <div class="blogdos__content d-flex gap-2 flex-column  flex-fill">
 
@@ -49,12 +56,15 @@
 
 
                             <p class="blog__cardparagraph">
-                                {{ Str::limit($post->summary, 100)  }}
+                                {{ Str::limit($post->summary, 100) }}
                             </p>
-                            <span>
-                                <a href="{{ route('admin.posts.edit',$post) }}" class="btn btn-outline-primary"> Editar </a>
+                            @can('admin.posts.edit')
+                                <span>
+                                    <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-outline-primary"> Editar
+                                    </a>
+                                </span>
+                            @endcan
 
-                            </span>
 
                         </div>
                     </div>
@@ -67,7 +77,7 @@
 
 
         </div>
-        {{$posts->links()}}
+        {{ $posts->links() }}
     </div>
 
 

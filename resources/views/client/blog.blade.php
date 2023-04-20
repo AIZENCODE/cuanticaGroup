@@ -9,9 +9,8 @@
             <div class="blog__texts text-center pb-2 pb-lg-5  d-flex flex-column gap-2">
                 <h3 class="blog__text fw-bold fs-6 text-primary">Nuestro Blog</h3>
 
-                <h2 class="fw-semibold display-4">Stories and interviews</h2>
-                <p class="fw-light mx-auto">Subscribe to learn about new product features, the latest in technology,
-                    solutions, and updates.</p>
+                <h2 class="fw-semibold display-4">Historias y entrevistas</h2>
+                <p class="fw-light mx-auto">Las mejores historias creadas para facilitar la informacion a la comunidad emprededora.</p>
                 <form class="d-grid gap-2" action="{{ route('blog.index') }}">
                     <div class="d-flex flex-wrap w-100 gap-2 justify-content-center align-items-start">
                         <div class="mb-3 form__content d-flex flex-column justify-content-start">

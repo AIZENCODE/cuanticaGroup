@@ -42,9 +42,12 @@
 
 
 
-        <span class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-outline-primary px-4 py-2">Crear Categoria</button>
-        </span>
+        @can('admin.categories.create')
+            <span class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-primary px-4 py-2">Crear Categoria</button>
+            </span>
+        @endcan
+
 
 
 

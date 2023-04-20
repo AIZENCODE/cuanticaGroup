@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Facades\Storage;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    use HasRoles;
     /**
      * The attributes that are mass assignable.
      *
@@ -53,6 +56,15 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    
+    public function image(): Attribute
+    {
+        return new Attribute(
+            get:function(){
+                return $this->image_url ? Storage::url($this->image_url) : 'https://www.logolynx.com/images/logolynx/s_4b/4beebce89d681837ba2f4105ce43afac.png';
+            }
+        );
+    }
 
 
 }

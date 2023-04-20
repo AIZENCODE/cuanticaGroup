@@ -2,8 +2,8 @@
 
 
 
-    <form class="contact__card d-flex flex-column gap-4 rounded-3 shadow-lg bg-white w-100" action="{{ route('admin.categories.update', $category) }}" method="POST"
-        enctype="multipart/form-data">
+    <form class="contact__card d-flex flex-column gap-4 rounded-3 shadow-lg bg-white w-100"
+        action="{{ route('admin.categories.update', $category) }}" method="POST" enctype="multipart/form-data">
 
         @csrf
         @method('PUT')
@@ -35,28 +35,36 @@
 
 
         <div class="col-md">
-            
+
             <span class="d-flex gap-2 justify-content-end">
-                <button type="button" class="btn btn-outline-danger px-4 py-2" onclick="deleteCategory()" @disabled($category->posts->count() !=0)>Eliminar</button>
-                <button type="submit" class="btn btn-outline-primary px-4 py-2">Actulizar Categoria</button>
+                @can('admin.categories.destroy')
+                    <button type="button" class="btn btn-outline-danger px-4 py-2" onclick="deleteCategory()"
+                        @disabled($category->posts->count() != 0)>Eliminar</button>
+                @endcan
+
+                @can('admin.categories.edit')
+                    <button type="submit" class="btn btn-outline-primary px-4 py-2">Actulizar Categoria</button>
+                @endcan
+
             </span>
         </div>
-
-
-
     </form>
-    @if ($category->posts->count()==0)
-    <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" id="formDeleteCategory">
-        @csrf
-        @method('DELETE')
 
-    </form>
-    @endif
-  
+    @can('admin.categories.destroy')
+        @if ($category->posts->count() == 0)
+            <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" id="formDeleteCategory">
+                @csrf
+                @method('DELETE')
+
+            </form>
+        @endif
+    @endcan
+
+
 
     @push('js')
         <script>
-              function deleteCategory() {
+            function deleteCategory() {
                 form = document.getElementById('formDeleteCategory');
 
                 // Enviar el formulario
